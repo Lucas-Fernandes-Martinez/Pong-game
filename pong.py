@@ -79,8 +79,10 @@ while True:
     pygame.draw.ellipse(TELA, BRANCO, bola)
     pygame.draw.aaline(TELA, BRANCO, (WIDTH // 2, 0), (WIDTH // 2, HEIGHT))
 
+    # Centralizando o placar
     texto = fonte.render(f"{pontos1}  -  {pontos2}", True, BRANCO)
-    TELA.blit(texto, (WIDTH // 2 - 50, 20))
+    texto_rect = texto.get_rect(center=(WIDTH // 2, 30))
+    TELA.blit(texto, texto_rect)
 
     pygame.display.flip()
     clock.tick(60)
